@@ -18,7 +18,19 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        if (CurrentState == GameState.Running)
+            return;
+
         CurrentState = GameState.Running;
         Debug.Log("Game Started");
+    }
+
+    public void StopGame()
+    {
+        if (CurrentState == GameState.Ended)
+            return;
+
+        CurrentState = GameState.Ended;
+        Debug.Log("Game Ended");
     }
 }
